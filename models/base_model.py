@@ -116,24 +116,16 @@ class BaseModel:
             del object_dict['updated_at']
 
         if object_dict.get('messages'):
-            tmp = [obj.id for obj in object_dict['messages'] if obj]
-            object_dict['messages'] = tmp
+            object_dict['messages'] = self.get_ids('messages')
 
         if object_dict.get('recipients'):
-            tmp = [obj.id for obj in object_dict['recipients'] if obj]
-            object_dict['recipients'] = tmp
-
-        if object_dict.get('recipient'):
-            obj = object_dict['recipient']
-            object_dict['recipient'] = obj.id
+            object_dict['recipient'] = self.get_ids('recipients')
 
         if object_dict.get('message'):
-            obj = object_dict['message']
-            object_dict['message'] = obj.id
+            object_dict['message'] = self.get_ids('message')
 
         if object_dict.get('user'):
-            obj = object_dict['user']
-            object_dict['user'] = obj.id
+            object_dict['user'] = self.get_ids('user')
 
         if '_sa_instance_state' in object_dict.keys():
             del object_dict['_sa_instance_state']
@@ -155,3 +147,31 @@ class BaseModel:
         return str("[{}] ({}): {}".format(object_name,
                                        object_id,
                                        self.to_dict()))
+
+    def get_ids(self, relation):
+        """
+            Returns a list of IDs of all related objects to the object
+                                                                    """
+        obj_id_list = []
+
+        if str(relation) == 'user':
+            user_obj = self.user
+            obj_id_list.append(user_obj.id)
+
+        if str(relation) == 'recipients':
+            recipients_list = self.recipients
+
+            for obj in recipients_list:
+                obj_id_list.append(obj.id)
+
+	    if str(relation) == 'messages':
+            message_list = self.messages
+
+            for obj in message_list:
+                obj_id_list.append(obj.id)
+
+	    if str(relation) == 'message':
+            message_obj = self.message
+            obj_id_list.append(message_obj.id)
+
+        return obj_id_list

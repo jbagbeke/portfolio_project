@@ -40,23 +40,3 @@ class User(BaseModel, Base):
         user_id = int(hashed[:5], 16)
 
         return user_id
-
-    def get_ids(self, relation):
-        """
-            Returns a list of IDs of all related objects to the object
-                                                                    """
-        obj_id_list = []
-
-        if str(relation) == 'messages':
-            message_list = self.messages
-
-            for obj in message_list:
-                obj_id_list.append(obj.id)
-
-        if str(relation) == 'recipients':
-            recipients_list = self.recipients
-
-            for obj in recipients_list:
-                obj_id_list.append(obj.id)
-
-        return obj_id_list
