@@ -10,10 +10,12 @@ from sqlalchemy.orm import sessionmaker, scoped_session
 from models.user import User
 from models.message import Message
 from models.recipient import Recipient
+from models.usercount import UserCount
+from models.base_model import Base
 import os
 
 
-def DBStorage():
+class DBStorage:
     """
         Handles DataBase related activities
                                             """
@@ -31,12 +33,9 @@ def DBStorage():
                                                           host,
                                                           database)
         engine = create_engine(engine_url)
+        self.__engine = engine
 
-        Session = sessionmaker(bind=engine)
-        ScopedSession = scoped_session(Session)
-        self.__session = ScopedSession()
-
-    def get(self, cls=None, uuid=None, user_id=None):
+    def get(self, cls=None, uuid=None):
         """
             Retrieves a particular user from database based on the [id]
 
@@ -52,25 +51,65 @@ def DBStorage():
 
         if cls:
             if uuid:
-                obj = self.__session.query(cls).filter(cls.id=uuid).first()
+                obj = self.__session.query(cls).filter(cls.id==uuid).first()
 
-            if user_id:
-                obj = self.__session.query(cls).filter(cls.user_id=user_id).first()
-
-    
         return obj
 
-    def save(self, obj=None):
+    def reload(self):
+        """
+            Reloads data from the database
+                                            """
+        Base.metadata.create_all(self.__engine)
+        factory = sessionmaker(bind=self.__engine, expire_on_commit=False)
+        Session = scoped_session(factory)
+        self.__session = Session
+
+    def all(self, cls=None):
+        """
+            Retrives all instances of a particular class or of all classes
+                                                                        """
+        
+        all_list = []
+
+        cls_dict = {"User": User,
+                    "Message": Message,
+                    "Recipient": Recipient}
+
+        if cls:
+            all_objects = self.__session.query(cls_dict[cls]).all()
+        else:
+            user_objects = self.__session.query(User).all()
+            recipient_objects = self.__session.query(Recipient).all()
+            message_objects = self.__session.query(Message).all()
+            all_objects = user_objects + recipient_objects + message_objects
+
+        if len(all_objects) > 0:
+            all_list = [obj.to_dict() for obj in all_objects]
+
+        return all_list
+
+    def count(self, cls=None):
+        """
+            Counts the number of instances of a class if specified
+            
+            Args:
+                cls - class specified to be counted
+                                                                """
+        if cls:
+            cls_count = len(self.all(cls))
+        else:
+            cls_count = len(self.all())
+
+        return cls_count
+
+
+    def save(self):
         """
             Saves object to database
             
-            Args:
-                obj - Object to save to database
-            
             Return - Void
                                                 """
-        if obj:
-            self.__session.commit(obj)
+        self.__session.commit()
 
     def new(self, obj=None):
         """
@@ -102,3 +141,24 @@ def DBStorage():
                                                     """
 
         self.__session.close()
+
+    def userCount(self):
+        """
+            Returns current Count of Users from the database
+                                                            """
+        count_object = self.__session.query(UserCount).first()
+
+        if not count_object:
+            count_obj = UserCount(usercount=1000)
+            count_obj.usercount = 1001
+            self.__session.add(count_obj)
+            self.__session.commit()
+
+            return 1000
+
+        count = count_object.usercount
+        count_object.usercount = count + 1
+
+        self.__session.commit()
+
+        return count
