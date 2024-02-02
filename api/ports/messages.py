@@ -64,14 +64,13 @@ def ports_messages_create():
                               receiver_number=receiver_number, message=message_object,
                               user=user_object)
 
-    print("USER:\n", user_object.to_dict())
-    print("\nMessage", message_object.to_dict())
-    print("\nRecipient", recipient_object.to_dict())
-
     storage.new(message_object)
     storage.new(recipient_object)
     storage.save()
-
+    
+    print('\n\n')
+    print(message_object.to_dict())
+    print('\n\n')
     return {'status': 'OK', 'object': message_object.to_dict()}
 
 @app_ports.route('/messages/updates', methods=['POST'], strict_slashes=False)

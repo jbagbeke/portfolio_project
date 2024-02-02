@@ -78,8 +78,8 @@ def ports_users_updates():
         valid = True
 
     if valid:
-        storage.save()
-    
+        user_object.save()
+
     return jsonify({'status': 'OK', 'object': user_object.to_dict()})
 
 @app_ports.route('/users/delete/<user_id>', methods=['POST'], strict_slashes=False)

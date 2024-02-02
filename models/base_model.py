@@ -43,39 +43,22 @@ class BaseModel:
                 setattr(self, key, value)
 
             if 'updated_at' not in kwargs.keys() and 'created_at' not in kwargs.keys():
-                self.created_at = datetime.now()
-                self.updated_at = datetime.now()
+                self.created_at = datetime.utcnow()
+                self.updated_at = datetime.utcnow()
                 self.id = uuid4()
 
                 self.new(self)
 
-    def save(self, obj=None):
+    def save(self):
         """
             Saves An Object into the Database
-
-            Args:
-                obj - Object to save to the database
 
             Return - Void
                                                     """
         from models import storage
 
-        if obj:
-            storage.save(obj)
-
-    def new(self, obj=None):
-        """
-            Saves new instance of an object
-            
-            Args:
-                Obj - New instance object to save
-
-            Return Void
-                                                """
-        from models import storage
-
-        if obj:
-            storage.new(obj)
+        self.updated_at = datetime.utcnow()
+        storage.save()
 
     def delete(self, obj=None):
         """
@@ -119,7 +102,7 @@ class BaseModel:
             object_dict['messages'] = self.get_ids('messages')
 
         if object_dict.get('recipients'):
-            object_dict['recipient'] = self.get_ids('recipients')
+            object_dict['recipients'] = self.get_ids('recipients')
 
         if object_dict.get('message'):
             object_dict['message'] = self.get_ids('message')
@@ -145,8 +128,8 @@ class BaseModel:
         object_id = self.id
 
         return str("[{}] ({}): {}".format(object_name,
-                                       object_id,
-                                       self.to_dict()))
+                                          object_id,
+                                          self.to_dict()))
 
     def get_ids(self, relation):
         """
@@ -154,23 +137,22 @@ class BaseModel:
                                                                     """
         obj_id_list = []
 
-        if str(relation) == 'user':
+        if relation == 'user':
             user_obj = self.user
             obj_id_list.append(user_obj.id)
 
-        if str(relation) == 'recipients':
+        if relation == 'recipients':
             recipients_list = self.recipients
 
             for obj in recipients_list:
                 obj_id_list.append(obj.id)
 
-	    if str(relation) == 'messages':
+        if relation == 'messages':
             message_list = self.messages
 
             for obj in message_list:
                 obj_id_list.append(obj.id)
-
-	    if str(relation) == 'message':
+        if relation == 'message':
             message_obj = self.message
             obj_id_list.append(message_obj.id)
 

@@ -57,9 +57,9 @@ class PORTCMD(cmd.Cmd):
             user_id = new_dict.get('user_id')
             user_obj = storage.get(User, user_id)
             print(user_obj)
-
-
-        new_instance = globals().get(args[0])(user=user_obj, **new_dict)
+            new_instance = globals().get(args[0])(user=user_obj, **new_dict)
+        else:
+            new_instance = globals().get(args[0])(**new_dict)
 
         if args[0] == 'Message':
             recipient_obj = Recipient(user_id=user_obj.id,
