@@ -8,16 +8,7 @@ from models.message import Message
 from models.user import User
 from models.recipient import Recipient
 from flask import request, abort, make_response, jsonify
- 
 
-"""def create_recipient_object(user_id, message_id, receiver_number,
-                            message_obj, user_obj):
-        Creates A recipient Instance
-                                    
-    new_recipient = Recipient(user_id=user_id, message_id=message_id,
-                              receiver_number=receiver_number, message=message_obj,
-                              user=user_obj)
-    return new_recipient"""
 
 @app_ports.route('/messages/<message_id>', methods=['GET'], strict_slashes=False)
 def ports_messages_get(message_id):
@@ -67,10 +58,7 @@ def ports_messages_create():
     storage.new(message_object)
     storage.new(recipient_object)
     storage.save()
-    
-    print('\n\n')
-    print(message_object.to_dict())
-    print('\n\n')
+
     return {'status': 'OK', 'object': message_object.to_dict()}
 
 @app_ports.route('/messages/updates', methods=['POST'], strict_slashes=False)
@@ -115,3 +103,22 @@ def ports_messages_delete(message_id):
     storage.save()
 
     return make_response(jsonify({'status': 'OK'}), 204)
+
+@app_ports.route('/messages/<message_id>/recipients', methods=['GET'], strict_slashes=False)
+def ports_message_recipient(message_id):
+    """
+        Retrieves all Recipients of a Message Instance
+                                    """
+
+    if not storage.get(Message, message_id):
+        abort(404)
+
+    recipients_list = []
+
+    message_obj = storage.get(Message, message_id)
+    message_recipients = message_obj.recipients
+
+    if message_recipients:
+        recipients_list = [obj.to_dict() for obj in message_recipients]
+
+    return jsonify(recipients_list)

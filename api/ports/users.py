@@ -96,3 +96,31 @@ def ports_users_delete(user_id):
     storage.save()
 
     return make_response(jsonify({'status': 'OK'}), 204)
+
+@app_ports.route('/users/<user_id>/messages', methods=['GET'], strict_slashes=False)
+def ports_users_messages(user_id):
+    """
+        Retrieves all Messages of a User Instance
+                                    """
+
+    if not storage.get(User, user_id):
+        abort(404)
+
+    messages_list = []
+
+    user_obj = storage.get(User, user_id)
+    user_messages = user_obj.messages
+
+    if user_messages:
+        messages_list = [obj.to_dict() for obj in user_messages]
+
+    return jsonify(messages_list)
+
+@app_ports.route('/users/count', methods=['GET'], strict_slashes=False)
+def ports_users_count():
+    """
+        Returns the count of all Users in the database
+                                                    """
+    user_count = storage.count('User')
+
+    return jsonify({'count': user_count})

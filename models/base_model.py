@@ -74,7 +74,7 @@ class BaseModel:
         if obj:
             storage.delete(obj)
 
-    def to_dict(self, time=False):
+    def to_dict(self):
         """
             Returns Dictionary representation of an object
 
@@ -86,17 +86,17 @@ class BaseModel:
             Return:
                 Dictionary representation of object
                                                                 """
+        time = "%Y-%m-%dT%H:%M:%S.%f"
         object_dict = {}
 
         object_dict.update(self.__dict__)
         object_dict['__class__'] = self.__class__.__name__
 
-        if time:
-            return object_dict
+        if 'updated_at' in object_dict.keys():
+            object_dict["updated_at"] = self.updated_at.strftime(time)
 
-        if 'updated_at' in object_dict.keys() and 'created_at' in object_dict.keys():
-            del object_dict['created_at']
-            del object_dict['updated_at']
+        if 'created_at' in object_dict.keys():
+            object_dict["created_at"] = self.created_at.strftime(time)
 
         if object_dict.get('messages'):
             object_dict['messages'] = self.get_ids('messages')
