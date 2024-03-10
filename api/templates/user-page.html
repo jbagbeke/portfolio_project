@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Tektur:regular,500,600,700,800,900" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lexend:100,200,300,regular,500,600,700,800,900" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,regular,500,600,700,800,300italic,italic,500italic,600italic,700italic,800italic" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    
+    <link rel="stylesheet" href="http://127.0.0.1:8080/styles/user-page.css?{{ uuid }}">
+</head>
+<body>
+    <main>
+        <header>
+                <div class="titan-logo">
+                    <img src="http://127.0.0.1:8080/images/logo-yellow.png" alt="">
+                    <h1>TextTitan</h1>
+                </div>
+        </header>
+
+        <section class="user-info">
+                <h2>Welcome!</h2>
+                <div class="user-name"><h3>{{ user_object.name }}</h3></div>
+
+                <div class="user">
+                    <div class="user-id"><h3>{{ user_object.user_id }}</h3></div>
+                    <button>new message</button>
+                </div>
+        </section>
+
+        <section class="user-messages">
+                <div class="create-message">
+                    <div class="ai">
+                        <div class="ai-topic">
+                            <input type="text" placeholder="AI Topic suggestion">
+                            <button>Generate</button>
+                        </div>
+
+                        <div class="ai-messages">
+                            <div class="copy-notice">Click on Text Area to Copy</div>
+                            <div id="loader" class="loader"></div>
+                            <div class="ai-message">AI MESSAGE SUGGESTIONS HERE</div>
+                        </div>
+
+                </div>
+
+                    <textarea name="message" cols="30" rows="10" placeholder="Enter Message Here" required></textarea>
+                    <textarea name="recipients" cols="30" rows="10" placeholder="Recipient Numbers [Comma Separated]" required></textarea>
+                    
+                    <div class="create-btn">
+                        <button id="btn-send">Send</button>
+                        <button id="btn-cancel">Cancel</button>
+                    </div>
+                </div>
+
+
+                <section>
+                    <div class="message-header">
+                        <h3>Your Messages</h3>
+                    </div>
+                    
+                    <div class="messages">
+                        <div id="mloader" class="loader"></div>
+                        <article class="message-article"></article>
+                    </div>
+
+        </section>
+
+        <footer>
+            <a href="#">Privacy Policy</a>
+            <a href="#">About Me</a>
+            <a href="#" class="back-home">Back Home</a>
+    </footer>
+    </main>
+
+    <script src="http://127.0.0.1:8080/scripts/user-page.js?{{ uuid }}"></script>
+</body>
+</html>

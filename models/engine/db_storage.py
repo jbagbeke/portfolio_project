@@ -35,23 +35,25 @@ class DBStorage:
         engine = create_engine(engine_url)
         self.__engine = engine
 
-    def get(self, cls=None, uuid=None):
+    def get(self, cls=None, obj_id=None):
         """
             Retrieves a particular user from database based on the [id]
 
             Args:
                 cls - Class Table to Query
-                uuid - UUID4 Generated ID of User
                 user_id - Identification Number of User
 
             Return:
                 Success - Returns the object
                 Failure - Returns None
                                                                       """
+        obj = None
 
         if cls:
-            if uuid:
-                obj = self.__session.query(cls).filter(cls.id==uuid).first()
+            if cls == User:
+                obj = self.__session.query(cls).filter(cls.user_id==obj_id).first()
+            else:
+                obj = self.__session.query(cls).filter(cls.id==obj_id).first()
 
         return obj
 
@@ -141,6 +143,17 @@ class DBStorage:
                                                     """
 
         self.__session.close()
+
+    def user_login(self, user_id):
+        """
+            Returns User object if user_id exists else None
+                                                            """
+        user_obj = self.__session.query(User).filter(User.user_id==user_id).all()
+
+        if (user_obj):
+            return user_obj
+
+        return None
 
     def userCount(self):
         """

@@ -1,0 +1,312 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFFCF2;
+}
+
+.loader, .mloader {
+    margin: 5px auto;
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    display: none; /* Initially hidden */
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }  
+
+  
+
+@media (min-width: 300px) {
+    main {
+        width: 80%;
+        margin: 0 auto;
+        font-family: 'Lexend';
+        overflow-x: hidden;
+    }
+
+    button {
+        border: 0;
+        background-color: #FFC208;
+        color: #FFFCF2;
+        font-size: 1.1rem;
+        padding: 5%;
+        border-radius: 5px;
+    }
+
+    header {
+        border-bottom: 2px solid #FFC208;
+    }
+
+    .titan-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .titan-logo img {
+        width: 20%;
+        height: 30%;
+    }
+
+    header h1 {
+        margin-left: 5px;
+        font-size: 2rem;
+    }
+
+    .user-info {
+        text-align: center;
+        line-height: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .copy-notice {
+        text-align: center;
+        color: blueviolet;
+        margin: 10px;
+        display: none;
+    }
+
+    .user button {
+        margin-top: 1rem;
+    }
+
+
+    .ai {
+        width: 80%;
+    }
+    .ai-topic {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .ai-topic input[type='text'] {
+        line-height: 2;
+        height: auto;
+        border: 2px solid #FFC208;
+        border-radius: 5px;
+        text-indent: 4%;
+        font-size: 0.8rem;
+        margin-bottom: 10%;
+        width: 100%;
+    }
+
+    .ai-messages {
+        border: 2px solid blueviolet;
+        margin-bottom: 5%;
+    }
+
+    .ai-message {
+        padding: 10px;
+        margin: 5% auto;
+        width: 90%;
+        font-family: 'Open Sans';
+        line-height: 1;
+        font-size: 0.8rem;
+        font-stretch: expanded;
+        border: 2px solid #FFC208;
+    }
+
+    .ai-topic button {
+        width: 50%;
+        margin-bottom: 10%;
+        padding: 5%;
+    }
+
+
+
+
+
+    .create-message {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 2rem;
+        display: none;
+    }
+
+    .create-message textarea {
+        padding-top: 2%;
+        width: 80%;
+        font-family: 'Lexend';
+        border: 2px solid #FFC208;
+        resize: none;
+    }
+
+    .create-btn {
+        margin-top: 2rem;
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .message-article {
+        border: 2px solid #FFC208;
+        margin-bottom: 5%;
+    }
+
+    .message-header {
+        text-align: center;
+    }
+
+    .messages {
+        text-align: justify;
+    }
+
+    .message-body {
+        margin-bottom: 1rem;
+        padding-top: 2%;
+        margin-top: 3%;
+        text-align: center;
+        border-top: 2px solid #FFC208;
+    }
+
+    .message-body:first-child {
+        border-top: 0;
+    }
+
+    .message-recipients {
+        margin-bottom: 1rem;
+        border: 2px solid blueviolet;
+
+    }
+
+    .message-btn {
+        width: fit-content;
+        margin: 0 auto;
+        margin-bottom: 5%;
+    }
+
+    .message-btn button {
+        padding: 15%;
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 4rem;
+        font-size: 0.9rem;
+        align-items: center;
+        border-top: 2px solid #FFC208;
+    }
+
+    footer a {
+        padding-top: 1%;
+        text-decoration: none;
+        color: #FFC208;
+        opacity: 70%;
+    }
+}
+
+@media (min-width: 700px) {
+    button {
+        padding: 4%;
+    }
+
+    .titan-logo img {
+        width: 80px;
+    }
+
+    .user-info {
+        font-size: 1.7rem;
+    }
+
+    .message-btn button {
+        padding: 25%;
+    }
+
+    footer a {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1000px) {
+    header {
+        justify-content: center;
+    }
+    
+    button {
+        font-size: 2rem;
+        padding: 2%;
+    }
+
+    .user-info {
+        font-size: 2.5rem;
+    }
+
+    .create-message textarea {
+        font-size: 1.8rem;
+    }
+
+    .message-header {
+        font-size: 2rem;
+    }
+
+    .ai-message {
+        font-size: 1rem;
+    }
+
+    .ai-topic button {
+        padding: 3%;
+        width: 20%;
+        font-size: 1.5rem;
+    }
+
+    .ai-topic input[type='text'] {
+        font-size: 1.3rem;
+        margin-bottom: 5%;
+        margin-top: 7%;
+    }
+
+    .message-body, .message-recipients {
+        font-size: 1.8rem;
+    }
+
+    .message-btn button {
+        padding: 15%;
+    }
+
+
+    footer a {
+        font-size: 1.5rem
+    }
+
+}
+
+@media (min-width: 1500px) {
+    main {
+        width: 60%;
+    }
+    button {
+        padding: 2%;
+        font-size: 1.5rem;
+    }
+
+    .user-info {
+        font-size: 2.5rem;
+    }
+
+
+    .user button {
+        margin: 5% 0;
+    }
+
+    .create-message textarea {
+        font-size: 1.5rem;
+    }
+
+    footer {
+        margin-top: 20%;
+    }
+
+    footer a {
+        font-size: 1.2rem;
+    }
+} 

@@ -1,0 +1,36 @@
+{'status': 'success', 'code': '2000', 'message': 'messages sent successfully', 'summary': {'_id': '17C988AD-E8F4-49BA-8A61-DF94C18EDF8C', 'type': 'API QUICK SMS', 'total_sent': 2, 'contacts': 2, 'total_rejected': 0, 'numbers_sent': ['+233548016587', '+233200482046'], 'credit_used': 2, 'credit_left': 282}}
+
+{'status': 'success', 'code': '2000', 'message': 'messages sent successfully', 'summary': {'_id': '90881636-C7DD-471F-A756-C9A0580D39A8', 'type': 'API QUICK SMS', 'total_sent': 1, 'contacts': 1, 'total_rejected': 0, 'numbers_sent': ['553443434'], 'credit_used': 1, 'credit_left': 281}}
+
+{'status': 'success', 'code': '2000', 'message': 'messages sent successfully', 'summary': {'_id': '0748FBB9-7C88-49F5-8225-8CD6A7CF988F', 'type': 'API QUICK SMS', 'total_sent': 1, 'contacts': 1, 'total_rejected': 0, 'numbers_sent': ['553443434'], 'credit_used': 1, 'credit_left': 280}}
+
+{'status': 'error', 'message': 'Make sure you are passing the recipients field as an array'}
+
+{'status': 'success', 'code': '2000', 'message': 'messages sent successfully', 'summary': {'_id': 'F0B02736-90FE-459D-A14F-990B452CA4E8', 'type': 'API QUICK SMS', 'total_sent': 0, 'contacts': 13, 'total_rejected': 13, 'numbers_sent': [], 'credit_used': 0, 'credit_left': 280}}
+
+{'status': 'error', 'message': 'Make sure you are passing the recipients field as an array'}
+
+{'status': 'success', 'code': '2000', 'message': 'messages sent successfully', 'summary': {'_id': '94F8B730-8C37-415B-8E05-6AE4463C51C2', 'type': 'API QUICK SMS', 'total_sent': 1, 'contacts': 1, 'total_rejected': 0, 'numbers_sent': ['+233548016587'], 'credit_used': 1, 'credit_left': 275}}
+
+{'status': 'success', 'code': '2000', 'message': 'messages sent successfully', 'summary': {'_id': '66C5BF91-E881-44B1-AB98-72D2D2C7E7A4', 'type': 'API QUICK SMS', 'total_sent': 1, 'contacts': 1, 'total_rejected': 0, 'numbers_sent': ['548016587'], 'credit_used': 3, 'credit_left': 272}}
+
+{'status': 'success', 'code': '2000', 'message': 'messages sent successfully', 'summary': {'_id': '87B18A01-4A31-4561-9BDE-C0A142C68F70', 'type': 'API QUICK SMS', 'total_sent': 1, 'contacts': 1, 'total_rejected': 0, 'numbers_sent': ['548016587'], 'credit_used': 1, 'credit_left': 271}}
+
+{'status': 'success', 'code': '2000', 'message': 'messages sent successfully', 'summary': {'_id': '58F6952F-2472-4CBC-B5D7-FC24D2429D85', 'type': 'API QUICK SMS', 'total_sent': 1, 'contacts': 1, 'total_rejected': 0, 'numbers_sent': ['548016587'], 'credit_used': 1, 'credit_left': 270}}
+
+{'status': 'success', 'code': '2000', 'message': 'messages sent successfully', 'summary': {'_id': '900F785A-ED11-45EB-A447-29A594F1EC03', 'type': 'API QUICK SMS', 'total_sent': 1, 'contacts': 1, 'total_rejected': 0, 'numbers_sent': ['548016587'], 'credit_used': 1, 'credit_left': 269}}
+
+{'status': 'success', 'code': '2000', 'message': 'messages sent successfully', 'summary': {'_id': '7F3113A6-F089-4663-8CD5-52DC09FA2765', 'type': 'API QUICK SMS', 'total_sent': 1, 'contacts': 1, 'total_rejected': 0, 'numbers_sent': ['548016587'], 'credit_used': 1, 'credit_left': 268}}
+
+{'status': 'success', 'code': '2000', 'message': 'messages sent successfully', 'summary': {'_id': '8D9674CE-EF77-4B5E-B73B-2D6D2897A3C2', 'type': 'API QUICK SMS', 'total_sent': 1, 'contacts': 1, 'total_rejected': 0, 'numbers_sent': ['548016587'], 'credit_used': 1, 'credit_left': 267}}
+
+{'status': 'success', 'code': '2000', 'message': 'messages sent successfully', 'summary': {'_id': '7E525201-7CF3-4417-AE5C-59DF041A9E8B', 'type': 'API QUICK SMS', 'total_sent': 1, 'contacts': 1, 'total_rejected': 0, 'numbers_sent': ['548016587'], 'credit_used': 1, 'credit_left': 266}}
+
+{'status': 'success', 'code': '2000', 'message': 'messages sent successfully', 'summary': {'_id': '5DC875E3-7CFF-4FB5-8998-39203B3FB3BE', 'type': 'API QUICK SMS', 'total_sent': 1, 'contacts': 1, 'total_rejected': 0, 'numbers_sent': ['200482046'], 'credit_used': 1, 'credit_left': 265}}
+
+{'status': 'success', 'code': '2000', 'message': 'messages sent successfully', 'summary': {'_id': '419332B2-29A6-419C-BBED-C2A5E653A3BA', 'type': 'API QUICK SMS', 'total_sent': 1, 'contacts': 1, 'total_rejected': 0, 'numbers_sent': ['200482046'], 'credit_used': 1, 'credit_left': 264}}
+
+{'status': 'success', 'code': '2000', 'message': 'messages sent successfully', 'summary': {'_id': '2CF6DB8F-EEB7-4019-8259-DFACEA7EDB6E', 'type': 'API QUICK SMS', 'total_sent': 1, 'contacts': 1, 'total_rejected': 0, 'numbers_sent': ['200482046'], 'credit_used': 1, 'credit_left': 263}}
+
+{'status': 'success', 'code': '2000', 'message': 'messages sent successfully', 'summary': {'_id': '084DEAFB-4857-4159-B737-144DDAA3ECC2', 'type': 'API QUICK SMS', 'total_sent': 1, 'contacts': 1, 'total_rejected': 0, 'numbers_sent': ['200482046'], 'credit_used': 1, 'credit_left': 262}}
+

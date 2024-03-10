@@ -47,8 +47,6 @@ class BaseModel:
                 self.updated_at = datetime.utcnow()
                 self.id = uuid4()
 
-                self.new(self)
-
     def save(self):
         """
             Saves An Object into the Database

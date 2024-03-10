@@ -1,0 +1,1004 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFFCF2;
+}
+
+
+@media (min-width: 300px) { 
+    .main-body {
+        font-family: 'Lexend';
+        margin-left: 5%;
+        margin-right: 5%;
+        height: auto;
+        /* max-width: 300px; */
+        overflow-y: hidden;
+    }
+    
+    .wide-screen {
+        display: none;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid #FFC208;
+    }
+    
+    .titan-logo {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .titan-logo h1 {
+        font-family: 'Tektur';
+    }
+    
+    .titan-logo img {
+        width: 50px;
+        height: 30px;
+        margin-right: 5px;
+    }
+        
+    
+    .header-nav {
+        display: none;
+    }
+    
+    .section-one {
+        margin-top: 30px;
+        display: flex;
+        width: 100%;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row-reverse;
+    }
+    
+    .one-img img {
+        width: 200px;
+        height: auto;
+    }
+    
+    .one-info {
+        font-size: 15px;
+    }
+    
+    .one-info span {
+        color: #FFC208;
+        font-size: 17px;
+        font-weight: bold;
+    }
+    
+    
+    .one-buttons button {
+        height: 17px;
+        font-size: 9px;
+        font-weight: bold;
+        width: 80px;
+        border-radius: 2px;
+    }
+    
+    .one-go-btn {
+        border: 0;
+        background-color: #FFC208;
+        color: white;
+    }
+    
+    .one-info-btn {
+        background-color: #FFFCF2;
+        border: 2px solid #FFC208;
+        color: #FFC208;
+    }
+    
+    .section-two, .section-three {
+        display: none;
+    }
+    
+    .section-two-header {
+        display: none;
+    }
+
+    .five-img img, .contact-img img {
+        width: 200px;
+        height: auto;
+    }
+    
+    .section-four {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .four-header {
+        margin-top: 30px;
+        font-size: 13px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .text-titan {
+        font-family: 'Tektur';
+        color: #FFC208;
+    }
+    
+    .four-info {
+        display: flex;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        flex-direction: column;
+        border: 2px solid blueviolet;
+        justify-self: end;
+        width: 61%;
+        font-size: 8px;
+        font-weight: bold;
+    }
+    
+    .info-p {
+        align-self: center;
+    }
+    
+    .four-info button {
+        margin-top: 3%;
+        align-self: center;
+         border: 0;
+        background-color: #FFC208;
+        color: white;
+        height: 15px;
+        font-size: 8px;
+        font-weight: bold;
+        width: 70px;
+        border-radius: 3px;
+        margin-bottom: 10px;
+    }
+    
+    .section-five {
+        border-top: 1px solid blueviolet;
+        border-bottom: 1px solid blueviolet;
+        display: flex;
+        width: 100%;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    
+    .section-five-header {
+        margin-top: 30px;
+        margin-bottom: 0;
+        font-size: 13px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .five-info {
+        font-size: 9px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* justify-content: space-around; */
+    
+    }
+    
+    .five-info h4 {
+        font-size: 10px;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+    
+    .about-paragraph p {
+        margin: 0;
+        /* padding-left: 20px; */
+    }
+    
+    .about-btns {
+        margin-top: 15px;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .about-btns button {
+        height: 10px;
+        font-size: 8px;
+        font-weight: bold;
+        width: 40px;
+        border-radius: 3px;
+        border: 0;
+        background-color: #FFC208;
+        color: #FFFCF2;
+    }
+    
+    .contact {
+        border-top: 1px solid blueviolet;
+        border-bottom: 1px solid blueviolet;
+        display: flex;
+        width: 100%;
+        margin-top: 50px;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    
+    .contact-info {
+        align-self: center;
+        width: 100%;
+    }
+    
+    .contact-info form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-content: space-around;
+        justify-content: space-around;
+    
+    }
+    
+    
+    .contact-name, .contact-email, .contact-message {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    
+    .contact-name input, .contact-email input, .contact-message input {
+        border: 2px solid #FFC208;
+        color: black;
+        text-indent: 2px;
+        height: 15px;
+        font-size: 8px;
+        border-radius: 3px;
+        margin-bottom: 3px; 
+        width: 70%;
+    }
+    
+    .message-area {
+        font-family: 'Lexend';
+        border: 2px solid #FFC208;
+        color: black;
+        text-indent: 1px;
+        font-size: 8px;
+        border-radius: 5px;
+        margin-bottom: 10px; 
+        width: 70%;
+        resize: none;
+        
+    }
+    
+    
+    .contact-name label, .contact-email label, .contact-message label {
+        align-self: flex-start;
+        margin-left: 17px;
+        margin-top: 13px;
+        font-size: 8px;
+        margin-bottom: 3px;
+    }
+    
+    .contact-info button {
+        margin-top: 5%;
+        align-self: center;
+        border: 0;
+        background-color: #FFC208;
+        color: white;
+        height: 15px;
+        font-size: 8px;
+        font-weight: bold;
+        width: 50px;
+        border-radius: 3px;
+        margin-bottom: 10px;
+    }
+    
+    footer {
+        justify-content: space-evenly;
+        display: flex;
+        align-items: center;
+        margin-top: 50px;
+        margin-bottom: 20px;
+        border-top: 2px solid #FFC208;
+        height: 50px;
+    }
+    
+    footer a {
+        text-decoration: none;
+        color: black;
+        font-size: 8px;
+    }
+    
+    footer a:hover {
+        color: #FFC208;
+    }
+}
+
+@media (min-width: 400px) {
+    .one-buttons {
+        margin-top: 10px;
+    }
+
+    .one-info {
+        font-size: 18px;
+    }
+
+    .one-info span {
+        font-size: 20px;
+    }
+
+    .five-info {
+        justify-content: center;
+    }
+
+    .about-btns {
+        margin-top: 20px;
+    }
+
+    .contact-info label {
+        margin-left: 24px;
+    }
+}
+
+
+@media (min-width: 500px) {
+    .one-buttons {
+        margin-top: 10px;
+    }
+
+    .one-buttons button {
+        height: 20px;
+        font-size: 10px;
+
+    }
+
+    .one-info {
+        font-size: 25px;
+    }
+
+    .one-info span {
+        font-size: 35px;
+    }
+
+    .five-info {
+        justify-content: center;
+    }
+
+    .four-info button {
+        height: 17px;
+        font-size: 10px;
+    }
+
+    .about-btns {
+        margin-top: 20px;
+    }
+
+    .about-btns button {
+        height: 17px;
+        font-size: 10px;
+    }
+
+    .about-paragraph {
+        font-size: 16px;
+    }
+
+    .contact-info label {
+        margin-left: 39px;
+    }
+
+    .contact-info button {
+        height: 17px;
+        font-size: 10px;
+    }
+}
+
+
+
+
+
+@media (min-width: 700px) {
+    .one-buttons {
+        margin-top: 10px;
+    }
+
+    .one-img img {
+        width: 300px;
+        height: auto;
+    }
+
+    .one-buttons {
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .one-buttons button {
+        height: 35px;
+        width: fit-content;
+        font-size: 15px;
+
+    }
+
+    .one-info {
+        font-size: 35px;
+    }
+
+    .one-info span {
+        font-size: 45px;
+    }
+
+    .five-img img, .contact-img img {
+        width: 300px;
+        height: auto;
+    }
+
+    .four-header h3 {
+        font-size: 20px;
+    }
+
+    .four-info {
+        font-size: 15px;
+    }
+
+    .four-info button {
+        height: 17px;
+        font-size: 10px;
+    }
+
+    .section-five-header h3 {
+        font-size: 20px;
+    }
+
+    .five-info {
+        justify-content: center;
+    }
+
+    .five-info h4 {
+        font-size: 18px;
+    }
+
+    .about-btns {
+        margin-top: 20px;
+    }
+
+    .about-btns button {
+        height: 17px;
+        font-size: 10px;
+    }
+
+    .about-paragraph {
+        font-size: 20px;
+    }
+
+    .contact-info label {
+        margin-left: 60px;
+        font-size: 15px;
+    }
+
+    .contact-info input {
+        font-size: 13px;
+        height: 30px;
+    }
+
+    .message-area {
+        font-size: 13px;
+        height: 70px;
+    }
+
+    .contact-info button {
+        height: 17px;
+        font-size: 10px;
+    }
+
+    footer a {
+        font-size: 16px;
+    }
+}
+
+
+@media (min-width: 900px) {
+    .one-buttons {
+        margin-top: 10px;
+    }
+
+    .one-img img {
+        width: 300px;
+        height: auto;
+    }
+
+    .one-buttons {
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .one-buttons button {
+        height: 35px;
+        width: 110px;
+        font-size: 16px;
+
+    }
+
+    .one-info {
+        font-size: 55px;
+    }
+
+    .one-info span {
+        font-size: 75px;
+    }
+
+    .five-img img, .contact-img img {
+        width: 300px;
+        height: auto;
+    }
+
+    .four-header h3 {
+        font-size: 25px;
+    }
+
+    .four-info {
+        font-size: 16px;
+    }
+
+    .four-info button {
+        height: 30px;
+        width: 120px;
+        font-size: 15px;
+    }
+
+    .section-five-header h3 {
+        font-size: 25px;
+    }
+
+    .five-info {
+        justify-items: space-between;
+    }
+
+    .five-info h4 {
+        font-size: 18px;
+    }
+
+    .about-btns {
+        margin-top: 20px;
+    }
+
+    .about-btns button {
+        height: 30px;
+        width: 50px;
+        font-size: 15px;
+        margin-left: 30px;
+    }
+
+    .about-paragraph {
+        font-size: 25px;
+        margin-left: 30px;
+    }
+
+    .contact-info label {
+        margin-left: 75px;
+        font-size: 15px;
+    }
+
+    .contact-info input {
+        font-size: 15px;
+        height: 35px;
+    }
+
+    .message-area {
+        font-size: 15px;
+        height: 80px;
+    }
+
+    .contact-info button {
+        height: 30px;
+        font-size: 15px;
+    }
+
+    footer a {
+        font-size: 17px;
+    }
+}
+
+
+
+@media (min-width: 1000px) {
+    .contact-info label {
+        margin-left: 90px;;
+    }
+
+    .contact-info button {
+        width: 70px;
+    }
+
+    .section-five {
+        justify-content: space-around;
+    }
+}
+
+
+
+@media (min-width: 1500px) {
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #FFC208;
+}
+
+.titan-logo {
+    display: flex;
+    align-items: center;
+    width: 13%;
+    justify-content: space-between;
+}
+
+.titan-logo h1 {
+    font-family: 'Tektur';
+}
+
+.titan-logo img {
+    width: 50px;
+    height: 30px;
+}
+    
+
+.header-nav {
+    display: flex;
+    width: 40%;
+
+    justify-content: space-between;
+    
+}
+
+.header-nav button {
+    background-color: #FFFCF2;
+    border: 0;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.header-nav button a {
+    text-decoration: none;
+    color: black;
+}
+
+.header-nav button a:hover {
+    color: #FFC208;
+}
+
+.section-one {
+    margin-top: 50px;
+    display: flex;
+    width: 100%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.one-img img {
+    width: 700px;
+    height: auto;
+}
+
+.one-info {
+    font-size: 80px;
+}
+
+.one-info span {
+    color: #FFC208;
+    font-size: 100px;
+    font-weight: bold;
+}
+
+
+.one-buttons button {
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 140px;
+    border-radius: 5px;
+}
+
+.one-go-btn {
+    border: 0;
+    background-color: #FFC208;
+    color: white;
+}
+
+.one-info-btn {
+    background-color: #FFFCF2;
+    border: 2px solid #FFC208;
+    color: #FFC208;
+}
+
+.section-two, .section-three {
+    border-top: 1px solid blueviolet;
+    border-bottom: 1px solid blueviolet;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    width: 100%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.section-two-header {
+    margin-top: 100px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.section-two-header h2 {
+    margin-bottom: 0;
+}
+
+.two-img img, .three-img img, .five-img img, .contact-img img {
+    width: 700px;
+    height: auto;
+}
+
+.two-info, .three-info {
+    font-size: 50px;
+    display: flex;
+    height: auto;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.two-info p {
+    margin: 0;
+    padding-left: 60px;
+}
+
+.three-info {
+    margin-top: 35px;
+}
+
+.three-info p {
+    margin: 0;
+}
+
+.three-info button {
+    margin-top: 70px;
+    margin-bottom: 0;
+    background-color: #FFC208;
+    width: 90%;
+    border: 0;
+    color: #FFFCF2;
+    border-radius: 5px;
+    height: 70px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.two-info button {
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 200px;
+    border-radius: 5px;
+    border: 0;
+    margin-left: 60px;
+    margin-top: 10%;
+    margin-bottom: 0;
+    background-color: #FFC208;
+    color: white;
+}
+
+.section-three {
+    margin-top: 100px;
+    flex-direction: row-reverse;
+}
+
+.section-four {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.four-header {
+    margin-top: 100px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.text-titan {
+    font-family: 'Tektur';
+    color: #FFC208;
+}
+
+.four-info {
+    display: flex;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    flex-direction: column;
+    border: 2px solid blueviolet;
+    justify-self: end;
+    width: 61%;
+    font-weight: bold;
+}
+
+.info-p {
+    align-self: center;
+}
+
+.four-info button {
+    margin-top: 3%;
+    align-self: center;
+     border: 0;
+    background-color: #FFC208;
+    color: white;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 200px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.section-five {
+    border-top: 1px solid blueviolet;
+    border-bottom: 1px solid blueviolet;
+    display: flex;
+    width: 100%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.section-five-header {
+    margin-top: 90px;
+    margin-bottom: 0;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.wide-screen {
+    display: flex;
+}
+
+.five-info {
+    font-size: 35px;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.five-info h4 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.about-paragraph p {
+    margin: 0;
+    padding-left: 60px;
+}
+
+.about-btns {
+    display: flex;
+    width: 75%;
+    justify-content: space-between;
+}
+
+.about-btns button {
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 100px;
+    border-radius: 5px;
+    border: 0;
+    background-color: #FFC208;
+    color: #FFFCF2;
+}
+
+.contact {
+    border-top: 1px solid blueviolet;
+    border-bottom: 1px solid blueviolet;
+    display: flex;
+    width: 100%;
+    margin-top: 100px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.contact-info {
+    align-self: center;
+    width: 100%;
+}
+
+.contact-info form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: space-around;
+
+}
+
+
+.contact-name, .contact-email, .contact-message {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.contact-name input, .contact-email input, .contact-message input {
+    border: 2px solid #FFC208;
+    color: black;
+    text-indent: 10px;
+    height: 50px;
+    font-size: 17px;
+    border-radius: 5px;
+    margin-bottom: 10px; 
+    width: 70%;
+}
+
+.message-area {
+    font-family: 'Lexend';
+    border: 2px solid #FFC208;
+    color: black;
+    text-indent: 10px;
+    height: 150px;
+    font-size: 17px;
+    border-radius: 5px;
+    margin-bottom: 10px; 
+    width: 70%;
+    resize: none;
+    
+}
+
+
+.contact-name label, .contact-email label, .contact-message label {
+    align-self: flex-start;
+    margin-left: 94px;
+    margin-top: 13px;
+    margin-bottom: 7px;
+}
+
+.contact-info button {
+    margin-top: 5%;
+    align-self: center;
+     border: 0;
+    background-color: #FFC208;
+    color: white;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 200px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+footer {
+    justify-content: space-evenly;
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    border-top: 2px solid #FFC208;
+    height: 50px;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+}
+
+footer a:hover {
+    color: #FFC208;
+}
+
+}

@@ -33,10 +33,10 @@ def ports_messages_create():
     
     request_data = request.get_json()
 
-    if not request_data.get('user_id') or not request_data.get('body'):
+    if not request_data.get('user_id') or not request_data.get('message'):
         return jsonify({'error': 'Invalid Details'})
 
-    if not request_data.get('receiver_number'):
+    if not request_data.get('recipients'):
         return jsonify({'error': 'Invalid Details'})
 
     user_id = request_data.get('user_id')
@@ -44,19 +44,22 @@ def ports_messages_create():
     if not storage.get(User, user_id):
         abort(404)
 
-    receiver_number = request_data.get('receiver_number')
-    message_body = request_data.get('body')
+    receiver_numbers = request_data.get('recipients')
+    message_body = request_data.get('message')
     
     user_object = storage.get(User, user_id)
     message_object = Message(user_id=user_id, body=message_body,
                              user=user_object)
 
-    recipient_object = Recipient(user_id=user_id, message_id=message_object.id,
-                              receiver_number=receiver_number, message=message_object,
-                              user=user_object)
-
     storage.new(message_object)
-    storage.new(recipient_object)
+
+    for recipient in receiver_numbers:
+        recipient_object = Recipient(user_id=user_id, message_id=message_object.id,
+                                     receiver_number=recipient, message=message_object,
+                                     user=user_object)
+
+        storage.new(recipient_object)
+    
     storage.save()
 
     return {'status': 'OK', 'object': message_object.to_dict()}
@@ -85,7 +88,7 @@ def ports_messages_updates():
 
     if message_body:
         message_object.body = message_body
-        storage.save()
+        stora    ge.save()
     
     return jsonify({'status': 'OK', 'object': message_object.to_dict()})
 
@@ -119,6 +122,6 @@ def ports_message_recipient(message_id):
     message_recipients = message_obj.recipients
 
     if message_recipients:
-        recipients_list = [obj.to_dict() for obj in message_recipients]
+        recipients_list = [obj.to_dict()['receiver_number'] for obj in message_recipients]
 
     return jsonify(recipients_list)
